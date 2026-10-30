@@ -11,6 +11,12 @@ upstream:
     type: deb_packages
     index_url: http://ppa.launchpad.net/costamagnagianfranco/boinc/ubuntu/dists/noble/main/binary-amd64/Packages.gz
     package: boinc-client
+  notes:
+    type: github_release
+    repo: BOINC/boinc
+    transform:
+    - regex: ^(\d+\.\d+)\.(\d+).*$
+      replace: client_release/\1/\1.\2
 
 release:
   branch: master
